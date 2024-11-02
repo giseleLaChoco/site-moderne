@@ -1,0 +1,466 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Arial", sans-serif;
+    background-color: #f3f4f6;
+    line-height: 1.6;
+    color: #333333;
+    overflow-x: hidden !important;
+}
+
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #0056b3;
+    --linear--gradient: linear-gradient(135deg, #007bff, #00c6ff);
+    --color-text: #fff;
+    --box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.1);
+    --box-shadow-hover: 0px 5px 15px -3px rgba(0, 0, 0, 0.2);
+    --background-color: #fff;
+}
+
+/* mise en forme du topbar */
+.topbar {
+    padding: 10px 0;
+    text-align: right;
+}
+
+.topbar span {
+    margin-right: 10px;
+}
+
+/* mise en forme du header */
+.header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: var(--background-color);
+    box-shadow: var(--box-shadow);
+
+}
+
+.header-content {
+    width: 90%;
+    padding: 20px 0;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h2 {
+    font-weight: 600;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header-content .logo {
+    width: 100px;
+    /* height: 50px; */
+
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header .navbar .navlink {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.navlink li {
+    list-style: none;
+    margin-left: 40px;
+}
+
+.navlink li i {
+    margin-right: 10px;
+}
+
+.navlink li a {
+    font-size: 16px;
+    font-weight: 600;
+    transition: all .3s ease;
+}
+
+.navlink li a:hover {
+    color: var(--primary-color);
+}
+
+
+
+.hamberger {
+    display: none;
+
+}
+
+/* responsive header */
+@media (max-width:768px) {
+    .navbar {
+        transform: translateX(100%);
+        position: absolute;
+        top: 100px;
+        right: 0;
+        background-color: #fff;
+        transition: transform 0.3s ease;
+    }
+
+    .navlink {
+        flex-direction: column;
+        justify-content: flex-start !important;
+        width: 250px;
+        height: 100vh;
+    }
+    .navlink li{
+        margin-bottom: 5px;
+    }
+
+    .hamberger {
+        display: flex;
+        cursor: pointer;
+    }
+
+    .navbar.fade-out {
+        transform: translateX(0%);
+    }
+    
+}
+
+/* lise en forme du contenu pricipal */
+.main {
+    padding: 70px 0;
+}
+
+.section-home {
+    width: 100%;
+    padding: 150px 0px;
+    background: var(--linear--gradient);
+    color: var(--color-text);
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+}
+
+.container h1 {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+}
+
+.container p {
+    margin-bottom: 1rem;
+    font-size: 1.20rem;
+}
+
+.container button {
+    font-weight: 600;
+    padding: 15px 30px;
+    margin-top: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50px;
+    margin-top: 30px;
+    background-color: var(--color-text);
+    color: var(--primary-color);
+    font-size: 1rem;
+    transition: all .3s ease;
+}
+
+button:hover {
+    background-color: var(--primary-color);
+    color: var(--color-text);
+}
+
+.section-services {
+    width: 80%;
+    margin: 60px auto;
+}
+
+.section-services h2 {
+    margin-bottom: 3rem;
+}
+
+.section-services .service-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-grid .service-card {
+    width: 100%;
+    background-color: var(--background-color);
+    box-shadow: var(--box-shadow);
+    padding: 30px;
+    border-radius: 10px;
+    transition: transform .3s ease;
+}
+
+.service-grid .service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card img {
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+}
+
+.title-card,
+.description-card {
+    text-align: center;
+}
+
+.section-about {
+    width: 100%;
+    background-color: var(--background-color);
+    padding: 70px;
+    margin: 80px 0;
+}
+
+.section-about h2 {
+    margin-bottom: 2rem;
+}
+
+.section-about .container {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+@media (max-width:768px) {
+    .section-about .container {
+        width: 100%;
+        margin: auto;
+    }
+    
+}
+
+.section-about .container p {
+    padding: 100px 0;
+    flex: 1;
+    text-align: flex-start;
+    font-size: 1rem;
+}
+
+@media(max-width:768px) {
+    .section-about .container p {
+        text-align: center;
+        padding: 10px 0;
+    }
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.section-testimonys {
+    width: 80%;
+    margin: 50px auto;
+}
+
+.section-testimonys h2 {
+    text-align: center;
+}
+
+.section-testimonys .testimonys {
+    width: 100%;
+    padding: 50px 0;
+}
+
+.testimonys {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.testimonys .testimony-card {
+    width: 100%;
+    background-color: var(--background-color);
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    transition: transform .3s ease;
+}
+
+.testimonys .testimony-card:hover {
+    transform: translateY(-5px);
+}
+
+.testimony-card img {
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+
+}
+
+.testimony-card .work {
+    padding: 15px 0;
+    font-style: italic;
+    font-size: 16.5px;
+}
+
+.testimony-card .author {
+    font-size: 17px;
+}
+
+.testimony-card .society {
+    color: var(--primary-color);
+}
+
+.contact h2 {
+    margin: 50px 0;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+form input {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+}
+
+form textarea {
+    color: #696666;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+}
+
+form button {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: var(--color-text);
+    transition: all .3s ease;
+}
+
+form button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* mise en forme du footer */
+footer {
+    background-color: #333333;
+    width: 100%;
+    color: var(--color-text);
+}
+
+footer .section-footer {
+    padding: 50px 0;
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width:768px) {
+    .section-footer {
+        flex-direction: column;
+    }
+
+}
+
+.section-footer .container {
+    width: 20%;
+    margin-right: 50px;
+}
+
+@media (max-width:768px) {
+    .section-footer .container {
+        width: 100%;
+        
+    }
+
+}
+
+.container .title-footer {
+    padding-bottom: 10px;
+}
+
+.section-footer li {
+    list-style: none;
+    padding: 5px 0;
+}
+
+.links li a {
+    transition: all .3s ease;
+}
+
+.links li a:hover {
+    color: var(--primary-color);
+}
+
+.container .social-media {
+    display: flex;
+}
+
+.social-media li {
+    margin-right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--background-color);
+    border-radius: 50%;
+    transition: all .3s ease;
+    color: #333333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* text-align: center; */
+}
+
+/* on ne peut pas contrôler les balises <a></a>, <span></span>, <strong></strong> et <mark></mark> 
+puisque ce sont des balises inline, on ne peut contrôler les dimensions si et seulement si on utilise display sur son parent */
+.social-media li a {
+    /* line-height: 30px; */
+    font-size: 20px;
+}
+
+.social-media li:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+footer .Copyright {
+    width: 80%;
+    margin: 0 auto;
+    padding: 15px 0;
+    border-top: 1px solid #555;
+    font-size: 16px;
+    text-align: center;
+}
